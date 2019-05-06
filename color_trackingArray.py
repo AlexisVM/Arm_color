@@ -56,10 +56,10 @@ for i in range(len(yellowconts)):
         array[1]=1
     elif ((x+w) <= 255) and ((y+h) >= 190): 
         cv2.putText(img, "[1,3]", (0, 320), font, 1, (0, 0, 0), 2, cv2.LINE_AA)
-        array[3]=1
+        array[2]=1
     elif ((x+w) >= 255) and ((y+h) <= 190): 
         cv2.putText(img, "[1,2]", (255, 150), font, 1, (0, 0, 0), 2, cv2.LINE_AA)
-        array[2]=1
+        array[3]=1
     elif ((x+w) >= 255) and ((y+h) >= 190): 
         cv2.putText(img, "[1,4]", (255, 320), font, 1, (0, 0, 0), 2, cv2.LINE_AA)
         array[4]=1
@@ -94,15 +94,4 @@ for i in range(len(greenconts)):
     elif ((x+w) >= 255) and ((y+h) >= 190): 
         cv2.putText(img, "[3,4]", (255, 320), font, 1, (0, 0, 0), 2, cv2.LINE_AA)
         array[4]=3
-while True:
-    cv2.imshow("yellow", yellowmaskFinal)
-    cv2.imshow("green", greenmaskFinal)
-    cv2.imshow("red", redmaskFinal)
-    cv2.line(img, (255,330), (255, 0), (0,0,255),2)
-    cv2.line(img, (0, 165), (510, 165), (0, 0, 255), 2)
-    cv2.putText(img, "1", (0, 20), font, 1, (0, 0, 0), 2, cv2.LINE_AA)
-    cv2.putText(img, "2", (255, 20), font, 1, (0, 0, 0), 2, cv2.LINE_AA)
-    cv2.putText(img, "3", (0, 190), font, 1, (0, 0, 0), 2, cv2.LINE_AA)
-    cv2.putText(img, "4", (255, 190), font, 1, (0, 0, 0), 2, cv2.LINE_AA)
-    cv2.imshow("cam", img)
-    cv2.waitKey(10)
+print(array)
